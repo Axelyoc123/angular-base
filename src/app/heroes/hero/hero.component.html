@@ -1,0 +1,39 @@
+
+<h1>{{name}}</h1>
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+  <dd>{{getHeroDescription()}}</dd>
+
+  <td>Capitalizado</td>
+  <dd>{{capitalizedName}}</dd>
+
+</dl>
+
+<!--
+  *ngIf="name!='Spiderman'" es una condicion que evalua cuando mostrar el boton y cuando no segun la condicion si es false se mostrara oculto si es true se mostrara
+-->
+<button
+  class="btn btn-primary mx-2"
+  *ngIf="name!='Spiderman'"
+  (click)="changeHero('Spiderman')">
+  Cambiar Nombre
+</button>
+
+<button
+  class="btn btn-primary"
+  *ngIf="age!=62"
+  (click)="changeAge(62)">
+  Cambiar edad
+</button>
+
+<button
+  class="btn btn-primary mx-2"
+  (click)="resetForm()">
+  Reset
+</button>
